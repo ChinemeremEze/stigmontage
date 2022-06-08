@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { icons } from './data';
 const Home =() => {
     const [backgroundImage, setBackgroundImage] = useState('https://images.unsplash.com/photo-1550664255-94d114340500?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyNTg5OTQz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1920')
+    const [change, setChange] = useState("no")
     useEffect(()=>{
         const result =  fetch('https://source.unsplash.com/1920x1080/?sports,soccer,nature', {
             method: 'HEAD'
@@ -12,7 +13,7 @@ const Home =() => {
             console.log(data.url)
         })
         
-    }, [])
+    },[change])
   return (
       <>
         <div>
@@ -22,12 +23,12 @@ const Home =() => {
             {
                 icons.map((icon)=>{
                     return (
-                        <div id="desktop-instagram" className="desktop-shortcut col-3 ">
-                        <a href="/project">
+                        <Icon id="desktop-instagram" className="desktop-shortcut col-3 ">
+                        <a href={icon.link} target="_blank">
                             <img src={icon.image}/>
                             <p> {icon.name}</p>
                         </a>
-                    </div>
+                    </Icon>
                     )
                 })
             }
@@ -41,10 +42,8 @@ const BgImage = styled.img`
     width: 100%;
     object-fit: cover;
     z-index: -1;
-
 `
 const Icons = styled.div`
-    border: 2px solid yellow;
     width: 100%;
     height: 100%;
     
@@ -63,7 +62,10 @@ const Icons = styled.div`
         //border: 2px solid green;
         width: 80px;
         height: 80px;
-      //  margin: 0 60px 0 0;
     }
+`
+const Icon = styled.div`
+display: inline-block;
+margin: 45px 0;
 `
 export default Home
