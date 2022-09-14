@@ -1,0 +1,103 @@
+body {
+    background-color: #222;
+   
+}
+.main-wrapper{
+    cursor: url(https://dwvo2npct47gg.cloudfront.net/images/awge-auto-small.png),auto;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+   // background-color: white;;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+#desktop-icons {
+    //border: 2px solid yellow;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    a{
+        color: white;
+        text-decoration: none;
+        cursor: url(https://dwvo2npct47gg.cloudfront.net/images/awge-pointer-small.png) 10 0,pointer;
+
+    }
+    img{
+        cursor: url(https://dwvo2npct47gg.cloudfront.net/images/awge-pointer-small.png) 10 0,pointer;
+        //border: 2px solid green;
+        width: 80px;
+        height: 80px;
+      //  margin: 0 60px 0 0;
+    }
+}
+.desktop-shortcut{
+    display: inline-block;
+    
+}
+
+
+@media(max-width:992px){
+    #desktop-icons {
+        img{
+            
+        }
+    }
+}
+@media(max-width:600px){
+    #desktop-icons {
+        img{
+            
+        }
+    }
+}
+@media(max-width:568px){ 
+    #desktop-icons {
+        
+
+        .desktop-shortcut{
+            //border: 2px solid blue;
+           // width: auto;
+        }
+        img{
+
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+@media (max-width: 414px) {
+
+}	
+@media(max-width:358px){
+
+}
+@media all and (min-width: 960px) {
+    #monitor {
+        -webkit-animation: tvflicker .2s infinite alternate; 
+        -moz-animation:    tvflicker .5s infinite alternate; 
+        -o-animation:      tvflicker .5s infinite alternate; 
+        animation:         tvflicker .5s infinite alternate; 
+    }
+
+    @-webkit-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(200,235,255,0.4); }
+    100% { box-shadow: 0 0 95px 0 rgba(200,230,255,0.45); }
+    }
+    @-moz-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+    }
+    @-o-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+    }
+    @keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+    }
+}

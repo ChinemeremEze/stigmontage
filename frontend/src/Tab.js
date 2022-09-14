@@ -1,33 +1,34 @@
 import React from 'react'
 import './Tab.scss'
-import { Link } from 'react-router-dom';
-import {HomeOutlined, WorkOutlineOutlined, AssignmentOutlined, FolderSpecialOutlined} from '@material-ui/icons/';
+import { NavLink } from 'react-router-dom';
+import {HomeOutlined, WorkOutlineOutlined, OndemandVideo, FolderSpecialOutlined} from '@material-ui/icons/';
+
 const Tab =() => {
   return (
     <div className="tabs">
-        <Link to="/" className="tab todos-tab">
+        <NavLink exact to="/home" className={(navData) => navData.isActive ? "selected tab bookmarks-tab" : "tab bookmarks-tab" }>
             <div className="tab-tile" >
                 <HomeOutlined/>
             </div>
-        </Link>
+        </NavLink>
 
-        <Link to="/resume" className="tab todos-tab">
+        <NavLink exact to="/resume"  className={(navData) => navData.isActive ? "selected tab todos-tab" : "tab todos-tab" }>
             <div className="tab-tile" >
             <WorkOutlineOutlined/>
             </div>
-        </Link>
+        </NavLink>
 
-        <Link to="/lessonalyzer" className="tab todos-tab">
+        <NavLink exact to="/lessonalyzer" className={(navData) => navData.isActive ? "selected tab notes-tab" : "tab notes-tab" }>
             <div className="tab-tile" >
             <FolderSpecialOutlined/>
             </div>
-        </Link>
+        </NavLink>
 
-    <a routerLink="blog" routerLinkActive="selected" className="tab notes-tab">
-        <div className="tab-tile">
-            <AssignmentOutlined/>
-        </div>
-    </a>
+        <NavLink exact to="/movies"  className={(navData) => navData.isActive ? "selected tab bookmarks-tab" : "tab bookmarks-tab" }>
+            <div className="tab-tile">
+                <OndemandVideo/>
+            </div>
+        </NavLink>
 </div>
   )
 }

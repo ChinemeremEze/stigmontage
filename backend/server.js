@@ -2,7 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 //const { createUser, updateUser, getUser, deleteUser, getUsers} = require("./handlers")
 const PORT = 8000;
-
+const MailMessage = require("nodemailer/lib/mailer/mail-message");
+const {
+  mailMessage
+} = require('./mailer');
 var app = express();
 
 app.use(express.json());
@@ -18,6 +21,7 @@ app.get('/', (req, res) =>{
 // app.get("/user/:username", getUser);
 // app.delete("/user", deleteUser);
 // app.get("/users", getUsers);
+app.post('/mail-message', mailMessage);
 
 const server = app.listen(PORT, function () {
   console.info('🌍 Listening on port ' + server.address().port);
